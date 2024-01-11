@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+</ion-header>
+
+<ion-content padding class="background">
+  <div class="login-container">
+    <img src="../../assets/icon/logo_univ-removebg-preview.png" alt="Logo" class="logo" style="opacity: 100%;">
+    <form action="#" method="post" class="login-form">
+        <label for="username" style="color: black;">Username:</label>
+        <input type="text" id="username" name="username" [(ngModel)]="username" required placeholder="Input your Username.." style="color: rgb(255, 255, 255);">
+        <div *ngIf="!username" style="color: red; font-size: smaller; margin-top: -10px; margin-bottom: 10px;">Username is required.</div>
+
+        <label for="password" style="color: black;">Password:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required placeholder="Input Your Password.." style="color: rgb(255, 255, 255);">
+        <div *ngIf="!password" style="color: red; font-size: smaller; margin-top: -10px; margin-bottom: 10px;">Password is required.</div>
+
+        <button type="submit" [routerLink]="['/tabs']" [disabled]="!username || !password" (click)="login()">Login</button>
+    </form>
+  </div>
+</ion-content>
